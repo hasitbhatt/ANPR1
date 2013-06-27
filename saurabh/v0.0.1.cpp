@@ -6,13 +6,13 @@
 using namespace std;
 using namespace cv;
 
-int main(int argc, char* argv[])
+int dfhgmain(int argc, char* argv[])
 {
 Scalar t;
 string gohils1,gohils2,tp,lol;
 lol="_out_";
-gohils1="C:\\Users\\iis\\Documents\\Visual Studio 2008\\Projects\\saurabh\\Debug\\test1\\try2";
-tp=".jpg";
+gohils1="C:\\Users\\iis\\Documents\\Visual Studio 2008\\Projects\\saurabh\\Debug\\test1\\20";
+tp=".png";
 gohils2=gohils1+lol;
 
 Mat x=imread(gohils1+tp);

@@ -6,15 +6,15 @@
 using namespace std;
 using namespace cv;
 
-int tmain(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 //int i,j,k;
 //String lol = "C:\\Users\\iis\\Desktop\\5.jpg";
 string gohils1,gohils2,tp,lol;
 lol="_out";
-gohils1="C:\\Users\\iis\\Documents\\Visual Studio 2008\\Projects\\saurabh\\Debug\\test1\\17";
+gohils1="C:\\Users\\iis\\Documents\\Visual Studio 2008\\Projects\\saurabh\\Debug\\test1\\3266cnt";
 gohils2=gohils1+lol+lol;
-tp=".png";
+tp=".jpg";
 Mat x;
 /*
 try{*/
@@ -33,7 +33,7 @@ cvtColor(x,x,CV_BGR2GRAY);
 
 //x=255-x;
 // Sgohil=x.clone();
-x.convertTo(Sgohil,CV_32F);
+//x.convertTo(Sgohil,CV_32F);
 /*Sgohil= (Sgohil+1);
 cv::log(Sgohil,Sgohil);
 Sgohil*=0.109;
@@ -95,7 +95,7 @@ tmp[k+j]='\0';
 cout << tmp;*/
 // imwrite(gohils2,bnw);
 imshow("Mr. Saurabh",x);
-imshow("Mr. Saurabhhhhhh",Sgohil);
+//imshow("Mr. Saurabhhhhhh",Sgohil);
 imshow("Black & White",bnw);
 waitKey(0);
 //}
