@@ -6,12 +6,12 @@
 using namespace std;
 using namespace cv;
 
-int tttmain(int argc, char* argv[])
+int qewmain(int argc, char* argv[])
 {
 //int i,j,k;
 //String lol = "C:\\Users\\iis\\Desktop\\5.jpg";
-string gohils1="C:\\Users\\iis\\Desktop\\6.jpg";
-string gohils2="C:\\Users\\iis\\Desktop\\out\\6_out.png";
+string gohils1=argv[1];
+//string gohils2="C:\\Users\\iis\\Desktop\\out\\6_out.png";
 
 Mat x=imread(gohils1);
 
@@ -31,22 +31,22 @@ minMaxLoc(Sgohil,&min,&max,&p1,&p2);
 Sgohil.convertTo(x,CV_8U,255.0/(max-min));
 */
 equalizeHist(x,x);
-imshow("lkl",x);
+//imshow("lkl",x);
 Scalar s;
 s=mean(x);
 morphologyEx(x,x,CV_MOP_BLACKHAT,getStructuringElement(MORPH_RECT,Size(5,5),Point(2,2)),Point(-1,-1),2);
-imshow("bi",x);
-imwrite(gohils2,x);
+//imshow("bi",x);
+//imwrite(gohils2,x);
 //equalizeHist(x,x);
 //GaussianBlur(x,sgohil,Size(11,101),2);
 //sgohil=x;
 //bilateralFilter(x,sgohil,7,1,3);
 blur(x,sgohil,Size(2,1));
 //medianBlur(x,sgohil,3);
-imshow("blur",sgohil);
+//imshow("blur",sgohil);
 
 morphologyEx(sgohil,sgohil,CV_MOP_CLOSE,getStructuringElement(MORPH_RECT,Size(17,2),Point(7,1)),Point(-1,-1),3);
-imshow("ntuasdf",sgohil);
+//imshow("ntuasdf",sgohil);
 Mat bnw = sgohil > 3.0/2*s[0];
 erode(bnw,bnw,getStructuringElement(MORPH_RECT,Size(4,4),Point(2,2)),Point(-1,-1),2);
 //morphologyEx(bnw,bnw,CV_MOP_CLOSE,getStructuringElement(MORPH_RECT,Size(10,10),Point(5,5)),Point(1,1));
@@ -73,9 +73,10 @@ tmp[k+j]=lol[i+1+j];
 tmp[k+j]='\0';
 cout << tmp;*/
 // imwrite(gohils2,bnw);
-imshow("Mr. Saurabh",x);
-imshow("Mr. Saurabhhhhhh",Sgohil);
-imshow("Black & White",bnw);
+//imshow("Mr. Saurabh",x);
+//imshow("Mr. Saurabhhhhhh",Sgohil);
+//imshow("Black & White",bnw);
+imwrite("gohils1\\"+gohils1,bnw);
 waitKey(0);
 //}
 return 0;
